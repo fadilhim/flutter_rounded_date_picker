@@ -149,9 +149,9 @@ Future<DateTime?> showRoundedDatePicker(
 
   Widget child = GestureDetector(
     onTap: () {
-      if (!barrierDismissible) {
-        Navigator.pop(context);
-      }
+      // if (!barrierDismissible) {
+      //   Navigator.pop(context);
+      // }
     },
     child: Container(
       color: background,
