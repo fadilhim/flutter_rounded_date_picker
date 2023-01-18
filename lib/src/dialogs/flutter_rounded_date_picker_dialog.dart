@@ -227,7 +227,10 @@ class _FlutterRoundedDatePickerDialogState
       onTapButtonNegative: _handleCancel,
       onTapButtonPositive: _handleOk,
       textActionButton: widget.textActionButton,
-      onTapButtonAction: widget.onTapActionButton,
+      onTapButtonAction: () {
+        widget.onTapActionButton?.call();
+        Navigator.of(context).pop();
+      },
       localizations: localizations,
       textStyleButtonNegative: widget.styleDatePicker?.textStyleButtonNegative,
       textStyleButtonPositive: widget.styleDatePicker?.textStyleButtonPositive,
