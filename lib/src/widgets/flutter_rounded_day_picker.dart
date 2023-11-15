@@ -304,12 +304,12 @@ class FlutterRoundedDayPicker extends StatelessWidget {
         if (isSelectedDay) {
           // The selected day gets a circle background highlight, and a contrasting text color.
           itemStyle = style?.textStyleDayOnCalendarSelected ??
-              themeData.accentTextTheme.bodyText1!.copyWith(
+              themeData.textTheme.bodyText1!.copyWith(
                 fontFamily: fontFamily,
               );
           decoration = style?.decorationDateSelected ??
               BoxDecoration(
-                color: themeData.accentColor,
+                color: themeData.colorScheme.secondary,
                 shape: BoxShape.circle,
               );
         } else if (disabled) {
@@ -322,7 +322,7 @@ class FlutterRoundedDayPicker extends StatelessWidget {
           // The current day gets a different text color.
           itemStyle = style?.textStyleCurrentDayOnCalendar ??
               themeData.textTheme.bodyText1!.copyWith(
-                color: themeData.accentColor,
+                color: themeData.colorScheme.secondary,
                 fontFamily: fontFamily,
               );
         }

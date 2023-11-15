@@ -101,7 +101,7 @@ class _FlutterRoundedYearPickerState extends State<FlutterRoundedYearPicker> {
         final TextStyle itemStyle = isSelected
             ? (widget.style?.textStyleYearSelected ??
                 themeData.textTheme.headline5!.copyWith(
-                  color: themeData.accentColor,
+                  color: themeData.colorScheme.secondary,
                   fontFamily: widget.fontFamily,
                 ))
             : (widget.style?.textStyleYear ?? style);

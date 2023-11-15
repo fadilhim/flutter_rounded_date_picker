@@ -751,7 +751,7 @@ class _TimePickerHeader extends StatelessWidget {
 
     Color activeColor;
     Color inactiveColor;
-    switch (themeData.primaryColorBrightness) {
+    switch (themeData.brightness) {
       case Brightness.light:
         activeColor = Colors.black87;
         inactiveColor = Colors.black54;
@@ -1368,20 +1368,20 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
         if (widget.use24HourDials) {
           selectedDialValue = widget.selectedTime.hour;
           primaryOuterLabels = _build24HourOuterRing(theme.textTheme);
-          secondaryOuterLabels = _build24HourOuterRing(theme.accentTextTheme);
+          secondaryOuterLabels = _build24HourOuterRing(theme.primaryTextTheme);
           primaryInnerLabels = _build24HourInnerRing(theme.textTheme);
-          secondaryInnerLabels = _build24HourInnerRing(theme.accentTextTheme);
+          secondaryInnerLabels = _build24HourInnerRing(theme.primaryTextTheme);
         } else {
           selectedDialValue = widget.selectedTime.hourOfPeriod;
           primaryOuterLabels = _build12HourOuterRing(theme.textTheme);
-          secondaryOuterLabels = _build12HourOuterRing(theme.accentTextTheme);
+          secondaryOuterLabels = _build12HourOuterRing(theme.primaryTextTheme);
         }
         break;
       case _TimePickerMode.minute:
         selectedDialValue = widget.selectedTime.minute;
         primaryOuterLabels = _buildMinutes(theme.textTheme);
         primaryInnerLabels = null;
-        secondaryOuterLabels = _buildMinutes(theme.accentTextTheme);
+        secondaryOuterLabels = _buildMinutes(theme.primaryTextTheme);
         secondaryInnerLabels = null;
         break;
     }
@@ -1401,7 +1401,7 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
           secondaryOuterLabels: secondaryOuterLabels,
           secondaryInnerLabels: secondaryInnerLabels,
           backgroundColor: backgroundColor,
-          accentColor: themeData.accentColor,
+          accentColor: themeData.secondaryHeaderColor,
           theta: _theta.value,
           activeRing: _activeRing,
           textDirection: Directionality.of(context),
